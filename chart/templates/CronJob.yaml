@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fetch-tweets
+spec:
+  schedule: {{ .Values.schedule }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: fetch-tweets
+            image: {{ .Values.image.repository }}
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            command:
+            - python main.py
+            envFrom:
+            - secretRef:
+                name: fetch-tweets
+            - configMapRef:
+                name: fetch-tweets
+          restartPolicy: OnFailure
