@@ -41,6 +41,6 @@ secretname:
 
 then
 
-```yaml
+```
 helm install --generate-name chart/
 ```
