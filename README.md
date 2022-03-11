@@ -2,9 +2,8 @@
 
 Simple fetch tweet job for kubernetes
 
-## Start app
+## Start app locally
 
-Locally : 
 
 1. Create Venv
 ```
@@ -24,11 +23,24 @@ pip install -r requirements.txt
 ```
 
 4. Add your API key to .env.local
-```
-
-```
 
 5. Launch App
 ```
+python fetch-tweets.py
+```
 
+## Install with helm
+
+Create a values file 
+Add your API key to :
+```yaml
+secretname:
+  bearer: <no-token-provided>
+```
+> chart/values.yaml
+
+then
+
+```yaml
+helm install --generate-name chart/
 ```
