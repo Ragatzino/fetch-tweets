@@ -2,6 +2,12 @@
 
 Simple fetch tweet job for kubernetes
 
+Parameters : 
+- Bearer token for Twitter API : BEARER_TOKEN in env or .env.local file (not versionned)
+- Subject of fetch request :  SUBJECT in env or .env or .env.local file
+
+Fetches and output in stdout some tweets.
+
 ## Start app locally
 
 
