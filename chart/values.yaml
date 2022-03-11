@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ragatzino/fetch-tweets
+  repository: ragatzino/twitter-api-python-fetcher:latest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
